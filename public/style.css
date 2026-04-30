@@ -189,9 +189,9 @@ main {
 /* ── Tags ── */
 .tag {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.3px;
 }
@@ -207,9 +207,9 @@ main {
 /* ── Status ── */
 .status-badge {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 10px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-top: 6px;
