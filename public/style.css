@@ -1,16 +1,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0c0c0c;
-  --card-bg: #161616;
-  --card-hover: #1c1c1c;
-  --border: #252525;
-  --border-hover: #3a3a3a;
-  --text: #f0ede8;
+  --bg: #f5f4f0;
+  --card-bg: #ffffff;
+  --card-hover: #faf9f6;
+  --border: #e0ddd8;
+  --border-hover: #c8c5be;
+  --text: #1a1a1a;
   --text-sub: #888;
-  --text-num: #444;
+  --text-num: #bbb;
   --accent: #c9a87c;
-  --accent-dim: rgba(201,168,124,0.15);
+  --accent-dim: rgba(201,168,124,0.2);
 }
 
 body {
@@ -25,7 +25,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(12,12,12,0.92);
+  background: rgba(245,244,240,0.92);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -195,14 +195,14 @@ main {
   font-weight: 700;
   letter-spacing: 0.3px;
 }
-.tag-모자      { background: #1a3a6b; color: #93c5fd; }
-.tag-자수      { background: #14532d; color: #86efac; }
-.tag-한정판    { background: #78350f; color: #fcd34d; }
-.tag-프로토타입 { background: #1f2937; color: #9ca3af; }
-.tag-콜라보    { background: #7f1d1d; color: #fca5a5; }
-.tag-시즌      { background: #3b0764; color: #d8b4fe; }
-.tag-잡종      { background: #7c2d12; color: #fdba74; }
-.tag-default   { background: #1a1a1a; color: #777; border: 1px solid #2a2a2a; }
+.tag-모자      { background: #dbeafe; color: #1d4ed8; }
+.tag-자수      { background: #dcfce7; color: #15803d; }
+.tag-한정판    { background: #fef9c3; color: #a16207; }
+.tag-프로토타입 { background: #f3f4f6; color: #4b5563; }
+.tag-콜라보    { background: #fee2e2; color: #b91c1c; }
+.tag-시즌      { background: #f3e8ff; color: #7e22ce; }
+.tag-잡종      { background: #ffedd5; color: #c2410c; }
+.tag-default   { background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; }
 
 /* ── Status ── */
 .status-badge {
@@ -214,10 +214,10 @@ main {
   letter-spacing: 0.5px;
   margin-top: 6px;
 }
-.status-개발중 { background: #422006; color: #fef08a; }
-.status-출시   { background: #052e16; color: #86efac; }
-.status-한정   { background: #451a03; color: #fcd34d; }
-.status-아카이브 { background: #111827; color: #6b7280; }
+.status-개발중 { background: #fef9c3; color: #a16207; }
+.status-출시   { background: #dcfce7; color: #15803d; }
+.status-한정   { background: #ffedd5; color: #c2410c; }
+.status-아카이브 { background: #f3f4f6; color: #6b7280; }
 
 /* ── Empty ── */
 .empty {
@@ -250,7 +250,7 @@ main {
 }
 
 .modal {
-  background: #161616;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 16px;
   max-width: 820px;
@@ -267,7 +267,7 @@ main {
   position: absolute;
   top: 14px;
   right: 14px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.06);
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-sub);
@@ -277,7 +277,7 @@ main {
   z-index: 1;
   transition: background 0.15s;
 }
-.modal-close:hover { background: rgba(255,255,255,0.12); color: var(--text); }
+.modal-close:hover { background: rgba(0,0,0,0.1); color: var(--text); }
 
 .modal-content {
   display: grid;
