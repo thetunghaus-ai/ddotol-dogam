@@ -41,22 +41,13 @@ body {
 
 .logo {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
-  text-decoration: none;
+  align-items: center;
   flex-shrink: 0;
 }
-.logo-ko {
-  font-size: 18px;
-  font-weight: 900;
-  color: var(--accent);
-  letter-spacing: -0.5px;
-}
-.logo-en {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-sub);
-  letter-spacing: 2px;
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .search-wrap {
@@ -147,9 +138,9 @@ main {
 
 .card-image-wrap {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 800 / 1070;
   overflow: hidden;
-  background: #111;
+  background: #fff;
   position: relative;
 }
 .card-image-wrap img {
@@ -294,9 +285,9 @@ main {
 }
 
 .modal-img-wrap {
-  aspect-ratio: 1;
+  aspect-ratio: 800 / 1070;
   overflow: hidden;
-  background: #111;
+  background: #fff;
   border-radius: 16px 0 0 16px;
 }
 .modal-img-wrap img {
@@ -355,7 +346,7 @@ main {
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .modal-content { grid-template-columns: 1fr; }
-  .modal-img-wrap { border-radius: 16px 16px 0 0; aspect-ratio: 16/9; }
+  .modal-img-wrap { border-radius: 16px 16px 0 0; aspect-ratio: 800 / 1070; }
 }
 
 @media (max-width: 640px) {
@@ -363,7 +354,7 @@ main {
   .filter-bar { padding: 8px 16px 10px; }
   main { padding: 16px; }
   .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .logo-en { display: none; }
+  .logo-img { height: 28px; }
 }
 
 @media (max-width: 360px) {
