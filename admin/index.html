@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드똘 도감 — 관리자</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">🎩 드똘 도감 <span>관리자</span></div>
+    <div class="header-actions">
+      <a href="/" target="_blank" class="btn btn-ghost">카탈로그 보기 →</a>
+      <button class="btn btn-deploy" onclick="showDeploy()">🚀 배포하기</button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Left: Form -->
+    <aside class="form-panel">
+      <div class="panel-title" id="formTitle">새 아이템 추가</div>
+
+      <form id="itemForm" onsubmit="submitForm(event)">
+        <input type="hidden" id="editId">
+
+        <div class="form-group">
+          <label>이름 <span class="req">*</span></label>
+          <input type="text" id="name" placeholder="작업물 이름" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>상태</label>
+            <select id="status">
+              <option value="개발중">🟡 개발중</option>
+              <option value="출시">🟢 출시</option>
+              <option value="한정">🟠 한정</option>
+              <option value="아카이브">⚫ 아카이브</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>날짜</label>
+            <input type="date" id="date">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>태그</label>
+          <input type="text" id="tags" placeholder="쉼표로 구분: 모자, 자수, 한정판">
+          <div class="tag-chips">
+            <button type="button" onclick="addTag('모자')">모자</button>
+            <button type="button" onclick="addTag('자수')">자수</button>
+            <button type="button" onclick="addTag('한정판')">한정판</button>
+            <button type="button" onclick="addTag('프로토타입')">프로토타입</button>
+            <button type="button" onclick="addTag('콜라보')">콜라보</button>
+            <button type="button" onclick="addTag('잡종')">잡종</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>설명</label>
+          <textarea id="description" rows="3" placeholder="작업물에 대한 짧은 설명..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>내부 메모 <span class="muted">(공개 안됨)</span></label>
+          <input type="text" id="note" placeholder="비공개 메모...">
+        </div>
+
+        <div class="form-group">
+          <label>이미지</label>
+          <div class="image-drop" id="imageDrop" onclick="document.getElementById('imageInput').click()">
+            <img id="imagePreview" style="display:none">
+            <div class="image-drop-inner" id="imagePlaceholder">
+              <div class="upload-icon">📷</div>
+              <div>클릭하거나 이미지를 끌어다 놓으세요</div>
+              <small>JPG, PNG, WEBP (최대 15MB)</small>
+            </div>
+          </div>
+          <input type="file" id="imageInput" accept="image/*" style="display:none">
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn" onclick="resetForm()" style="display:none" class="btn btn-ghost">취소</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary">추가하기</button>
+        </div>
+      </form>
+    </aside>
+
+    <!-- Right: List -->
+    <section class="list-panel">
+      <div class="list-header">
+        <div class="panel-title">등록된 작업물 <span id="countBadge" class="count-badge">0</span></div>
+        <input type="text" id="listSearch" placeholder="검색..." class="list-search">
+      </div>
+      <div id="itemList" class="item-list"></div>
+    </section>
+
+  </div>
+
+  <!-- Deploy modal -->
+  <div class="overlay" id="deployOverlay" onclick="hideDeploy()">
+    <div class="deploy-modal" onclick="event.stopPropagation()">
+      <div class="deploy-title">🚀 Vercel에 배포하기</div>
+      <p>터미널(Terminal)을 열고 아래 명령어를 붙여넣으면<br>1분 안에 사이트가 업데이트됩니다.</p>
+      <div class="code-block" id="deployCmd">cd ~/Desktop/드똘-도감 && git add . && git commit -m "도감 업데이트" && git push</div>
+      <div class="deploy-actions">
+        <button class="btn btn-primary" onclick="copyDeploy()">📋 복사하기</button>
+        <button class="btn btn-ghost" onclick="hideDeploy()">닫기</button>
+      </div>
+      <div id="copyConfirm" class="copy-confirm" style="display:none">✓ 복사됐어요!</div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
