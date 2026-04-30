@@ -189,9 +189,9 @@ main {
 /* ── Tags ── */
 .tag {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.3px;
 }
@@ -207,11 +207,11 @@ main {
 /* ── Status ── */
 .status-badge {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   margin-top: 6px;
 }
 .status-개발중 { background: #fef9c3; color: #a16207; }
